@@ -1,2 +1,3 @@
-# xona
-Rede social de relacionamentos baseado no tinder
+# Xona
+
+Rede social de relacionamentos baseado no tinder.
