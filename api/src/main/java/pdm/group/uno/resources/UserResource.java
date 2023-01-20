@@ -8,31 +8,31 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import pdm.group.uno.domain.entities.UserEntity;
-import pdm.group.uno.domain.services.UserService;
+import pdm.group.uno.services.UserService;
+import pdm.group.uno.entities.User;
 
 @Path("/user")
 @ApplicationScoped
+@Produces(MediaType.APPLICATION_JSON)
 public class UserResource {
     @Inject
     UserService userService;
 
     @GET
     @Path("/")
-    @Produces(MediaType.APPLICATION_JSON)
     public Response show() {
         return userService.getUsers();
     }
 
     @GET
     @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
     public Response index(@PathParam("id") Long id) {
         return userService.getUserById(id);
     }
@@ -40,14 +40,24 @@ public class UserResource {
     @POST
     @Path("/")
     @Transactional
-    @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response store(UserEntity user) {
+    public Response store(User user) {
         return userService.storeUser(user);
+    }
+
+    @PUT
+    @Path("/{id}")
+    @Transactional
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response update(@PathParam("id") Long id, User user) {
+        user.setId(id);
+        System.out.print(user.getName() == null);
+        return userService.updateUser(user);
     }
 
     @DELETE
     @Path("/{id}")
+    @Transactional
     public Response delete(@PathParam("id") Long id) {
         return userService.deleteUserById(id);
     }
