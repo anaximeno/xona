@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "3f82d164-b543-486e-9d09-d23b53d8d708",
-		"name": "Xona - API",
+		"name": "Xona - API Spec",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "22603429"
 	},
@@ -23,7 +23,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"John\",\n    \"lastName\": \"Doe\",\n    \"birthDate\": \"1992-01-06\"\n}",
+							"raw": "{\n    \"name\": \"John\",\n    \"lastName\": \"Doe\",\n    \"birthDate\": \"1992-01-06\",\n    \"email\": \"johndoe@email.com\",\n    \"genre\": \"0\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -77,6 +77,51 @@
 								"type": "text"
 							}
 						],
+						"url": {
+							"raw": "{{LOCAL}}/user/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE USER",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"birthDate\": \"1992-06-01\",\n    \"bio\": \"This is the classic joe...\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL}}/user/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE USER",
+					"request": {
+						"method": "DELETE",
+						"header": [],
 						"url": {
 							"raw": "{{LOCAL}}/user/1",
 							"host": [
