@@ -8,6 +8,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.core.Response;
 
 import pdm.group.uno.entities.User;
+import pdm.group.uno.helpers.Responder;
 
 @ApplicationScoped
 public class UserService {
@@ -23,13 +24,25 @@ public class UserService {
     }
 
     public Response storeUser(User user) {
-        User.persist(user);
-
-        if (user.isPersistent()) {
-            return Response.created(URI.create("/user/" + user.getId())).build();
+        if (User.find("email", user.getEmail()).firstResult() != null) {
+            return Response
+                    .status(Response.Status.BAD_REQUEST)
+                    .entity(Responder.message("Email já cadastrado no sistema"))
+                    .build();
         }
 
-        return Response.status(Response.Status.BAD_REQUEST).build();
+        User.persist(user);
+        if (user.isPersistent()) {
+            return Response
+                    .created(URI.create("/user/" + user.getId()))
+                    .entity(user, null)
+                    .build();
+        }
+
+        return Response
+                .status(Response.Status.BAD_REQUEST)
+                .entity(Responder.message("Usuário não pôde ser guardado!"))
+                .build();
     }
 
     public Response updateUser(User user) {

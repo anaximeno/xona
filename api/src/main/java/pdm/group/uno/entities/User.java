@@ -22,7 +22,7 @@ public class User extends PanacheEntity implements UpdatableEntity<User> {
     @Column(name = "birth_date")
     protected LocalDate birthDate;
 
-    @Column(length = 255)
+    @Column(length = 255, unique = true)
     protected String email;
 
     protected String password;
