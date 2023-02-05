@@ -51,7 +51,6 @@ public class UserResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response update(@PathParam("id") Long id, User user) {
         user.setId(id);
-        System.out.print(user.getName() == null);
         return userService.updateUser(user);
     }
 

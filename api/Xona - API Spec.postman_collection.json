@@ -136,6 +136,117 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Interest",
+			"item": [
+				{
+					"name": "CREATE INTEREST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Rock and Roll\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL}}/interest",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"interest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL INTERESTS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL}}/interest",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"interest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET INTEREST BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL}}/interest/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"interest",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE INTEREST",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Heavy Metal\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL}}/interest/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"interest",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE INTEREST",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL}}/interest/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"interest",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [

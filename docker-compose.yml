@@ -1,0 +1,37 @@
+version: '3.8'
+
+volumes:
+  postgres_data:
+    driver: local
+
+services:
+  postgres:
+    image: docker.io/postgres:latest
+    environment:
+      POSTGRES_DB: xona
+      POSTGRES_USER: xona
+      POSTGRES_PASSWORD: passw0rd
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    command: start-dev -Djgroups.dns.query=xona
+    environment:
+      KC_CACHE: ispn
+      KC_CACHE_STACK: kubernetes
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/xona
+      KC_DB_USERNAME: xona
+      KC_DB_PASSWORD: passw0rd
+      KC_PROXY: edge
+      KC_HOSTNAME_STRICT: "false"
+      KC_SPI_EVENTS_LISTENER_JBOSS_LOGGING_SUCCESS_LEVEL: info
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: passw0rd
+    depends_on:
+      - postgres
+    ports:
+      - 8080:8080
