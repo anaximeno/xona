@@ -22,4 +22,12 @@ public abstract class Responder {
 
         return msg;
     }
+
+    public static HashMap<String, Object> data(Object data) {
+        final HashMap<String, Object> d = newResponse();
+
+        d.put("data", data);
+
+        return d;
+    }
 }
