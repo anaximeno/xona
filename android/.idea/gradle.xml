@@ -7,10 +7,12 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="Embedded JDK" />
         <option name="modules">
           <set>
-            <option value="/mnt/windows/Users/Aniel Freire/Projects/Tinder_trabalho_pdm/xona/android" />
-            <option value="/mnt/windows/Users/Aniel Freire/Projects/Tinder_trabalho_pdm/xona/android/app" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/uikit" />
           </set>
         </option>
       </GradleProjectSettings>
