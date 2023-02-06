@@ -4,13 +4,13 @@ import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.management.relation.RelationType;
 import javax.persistence.Column;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 import pdm.group.uno.enums.Genre;
 import pdm.group.uno.enums.SexualOrientation;
+import pdm.group.uno.enums.RelationType;
 
 import pdm.group.uno.helpers.UpdatableEntity;
 
