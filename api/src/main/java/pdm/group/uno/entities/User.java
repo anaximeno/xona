@@ -130,14 +130,15 @@ public class User extends PanacheEntity implements UpdatableEntity<User> {
         }
     }
 
-    public void update(User user) {
-        setName(user.getName());
-        setLastName(user.getLastName());
-        setEmail(user.getEmail());
-        setBirthDate(user.getBirthDate());
-        setBio(user.getBio());
-        setSexualOrientation(user.getSexualOrientation());
-        setRelationType(user.getRelationType());
+    @Override
+    public void update(User entity) {
+        setName(entity.getName());
+        setLastName(entity.getLastName());
+        setEmail(entity.getEmail());
+        setBirthDate(entity.getBirthDate());
+        setBio(entity.getBio());
+        setSexualOrientation(entity.getSexualOrientation());
+        setRelationType(entity.getRelationType());
         persist();
     }
 }
