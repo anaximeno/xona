@@ -4,10 +4,14 @@ import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.management.relation.RelationType;
 import javax.persistence.Column;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+
 import pdm.group.uno.enums.Genre;
+import pdm.group.uno.enums.SexualOrientation;
+
 import pdm.group.uno.helpers.UpdatableEntity;
 
 @Entity
@@ -25,12 +29,16 @@ public class User extends PanacheEntity implements UpdatableEntity<User> {
     @Column(length = 255, unique = true)
     protected String email;
 
-    protected String password;
-
     protected Genre genre;
 
     @Column(length = 512)
     protected String bio;
+
+    @Column(name = "sexual_orientation")
+    protected SexualOrientation sexualOrientation;
+
+    @Column(name = "relation_type")
+    protected RelationType relationType;
 
     public Long getId() {
         return id;
@@ -102,12 +110,34 @@ public class User extends PanacheEntity implements UpdatableEntity<User> {
         }
     }
 
+    public SexualOrientation getSexualOrientation() {
+        return this.sexualOrientation;
+    }
+
+    public void setSexualOrientation(SexualOrientation sexualOrientation) {
+        if (sexualOrientation != null) {
+            this.sexualOrientation = sexualOrientation;
+        }
+    }
+
+    public RelationType getRelationType() {
+        return this.relationType;
+    }
+
+    public void setRelationType(RelationType relationType) {
+        if (relationType != null) {
+            this.relationType = relationType;
+        }
+    }
+
     public void update(User user) {
-        setName(user.name);
-        setLastName(user.lastName);
-        setEmail(user.email);
-        setBirthDate(user.birthDate);
-        setBio(user.bio);
+        setName(user.getName());
+        setLastName(user.getLastName());
+        setEmail(user.getEmail());
+        setBirthDate(user.getBirthDate());
+        setBio(user.getBio());
+        setSexualOrientation(user.getSexualOrientation());
+        setRelationType(user.getRelationType());
         persist();
     }
 }
