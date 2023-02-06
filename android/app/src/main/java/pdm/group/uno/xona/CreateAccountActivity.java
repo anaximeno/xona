@@ -35,6 +35,9 @@ public class CreateAccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //replace with the right code later
+                Intent i = new Intent(CreateAccountActivity.this, SignActivity.class);
+                startActivity(i);
             }
         });
 
@@ -53,6 +56,7 @@ public class CreateAccountActivity extends AppCompatActivity {
             @Override
             public void onSuccess(User user) {
                 Log.d("createUser", user.toString());
+
 
             }
 

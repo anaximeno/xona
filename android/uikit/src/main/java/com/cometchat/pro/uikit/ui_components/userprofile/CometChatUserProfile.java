@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.bumptech.glide.Glide;
 import com.cometchat.pro.core.CometChat;
@@ -40,11 +41,11 @@ public class CometChatUserProfile extends Fragment {
 
     private CometChatAvatar notificationIv;
     private AlertDialog.Builder dialog;
+
     FragmentCometchatUserProfileBinding moreInfoScreenBinding;
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+        super.onCreate(savedInstanceState);}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -150,6 +151,7 @@ public class CometChatUserProfile extends Fragment {
         });
         alertDialog.show();
     }
+
 
     private void updateUser(User user) {
         CometChat.updateUser(user, UIKitConstants.AppInfo.AUTH_KEY, new CometChat.CallbackListener<User>() {

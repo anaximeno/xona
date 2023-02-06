@@ -36,7 +36,9 @@ public class SignActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
+                //replace with the right code later
+                Intent i = new Intent(SignActivity.this, TinderActivity.class);
+                startActivity(i);
             }
         });
 
@@ -52,6 +54,7 @@ public class SignActivity extends AppCompatActivity {
                         public void onSuccess(User user) {
                             Log.d("Login Successful", user.toString());
                             //action
+
                         }
 
                         @Override

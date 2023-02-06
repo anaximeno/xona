@@ -16,6 +16,7 @@ import com.cometchat.pro.exceptions.CometChatException;
 
 import com.cometchat.pro.uikit.ui_components.cometchat_ui.CometChatUI;
 import com.cometchat.pro.uikit.ui_settings.UIKitSettings;
+import com.cometchat.pro.uikit.ui_settings.enums.UserMode;
 
 import pdm.group.uno.xona.constants.AppConfig;
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         intiCometChat();
+        UIKitSettings.setUsersMode(UserMode.FRIENDS);
 
         Button createUserBnt = findViewById(R.id.button);
         createUserBnt.setOnClickListener(new View.OnClickListener() {
