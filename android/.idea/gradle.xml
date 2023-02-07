@@ -10,9 +10,9 @@
         <option name="gradleJvm" value="Embedded JDK" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/uikit" />
+            <option value="/mnt/windows/Users/Aniel Freire/Projects/Tinder_trabalho_pdm/xona/android" />
+            <option value="/mnt/windows/Users/Aniel Freire/Projects/Tinder_trabalho_pdm/xona/android/app" />
+            <option value="/mnt/windows/Users/Aniel Freire/Projects/Tinder_trabalho_pdm/xona/android/uikit" />
           </set>
         </option>
       </GradleProjectSettings>
