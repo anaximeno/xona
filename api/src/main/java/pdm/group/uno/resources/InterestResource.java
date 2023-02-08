@@ -13,7 +13,7 @@ import pdm.group.uno.entities.Interest;
 
 
 
-@Path("/interest")
+@Path("/api/interest")
 @ApplicationScoped
 @Produces(MediaType.APPLICATION_JSON)
 public class InterestResource {

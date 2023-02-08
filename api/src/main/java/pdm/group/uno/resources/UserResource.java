@@ -18,7 +18,7 @@ import javax.ws.rs.core.Response;
 import pdm.group.uno.services.UserService;
 import pdm.group.uno.entities.User;
 
-@Path("/user")
+@Path("/api/user")
 @ApplicationScoped
 @Produces(MediaType.APPLICATION_JSON)
 public class UserResource {
