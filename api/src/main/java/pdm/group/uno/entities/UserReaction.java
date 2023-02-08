@@ -45,7 +45,6 @@ public class UserReaction extends PanacheEntity implements UpdatableEntity<UserR
         return this.userThatReceivesReaction;
     }
 
-
     public void setUserThatReacts(User user) {
         if (user != null) {
             this.userThatReacts = user;
