@@ -1,10 +1,14 @@
 package pdm.group.uno.entities;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Table;
 import javax.persistence.Column;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
@@ -39,6 +43,12 @@ public class User extends PanacheEntity implements UpdatableEntity<User> {
 
     @Column(name = "relation_type")
     protected RelationType relationType;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "userThatReceivesReaction")
+    protected List<UserReaction> reactionsReceived;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "userThatReacts")
+    protected List<UserReaction> reactionsGiven;
 
     public Long getId() {
         return id;

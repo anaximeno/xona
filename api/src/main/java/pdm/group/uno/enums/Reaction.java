@@ -1,7 +1,7 @@
 package pdm.group.uno.enums;
 
-public enum Interation {
+public enum Reaction {
     Like,
     Dislike,
-    Denounce
+    Denounce,
 }
