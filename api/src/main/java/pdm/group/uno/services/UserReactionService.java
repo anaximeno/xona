@@ -53,6 +53,9 @@ public class UserReactionService {
         userReaction.setUserThatReacts(userGives.get());
         userReaction.setUserThatReceivesReaction(userReceives.get());
 
+        // TODO: verify if there is a match between them two and call the route in the link bellow:
+        //  - https://api-explorer.cometchat.com/reference/add-friend
+
         return Response.ok().entity(Responder.message("Reação adicionada com sucesso!")).build();
     }
 }
