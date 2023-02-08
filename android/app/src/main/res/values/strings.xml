@@ -6,4 +6,10 @@
     <string name="sign_text">Sign IN</string>
     <string name="hello_blank_fragment">Fragment</string>
     <string name="circle">circle</string>
+    <string name="create_account">create account</string>
+    <string name="sign_in">sign in</string>
+    <string name="agree_to_terms">By tapping Create Account or Sign In, you agree to our Terms. Learn how we process your data in our Privacy Policy and Cookies Policy.</string>
+    <string name="title_activity_agree_to_rules">AgreeToRulesActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

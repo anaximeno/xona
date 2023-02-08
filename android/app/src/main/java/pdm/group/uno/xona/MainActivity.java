@@ -42,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Button iAgreeButton = findViewById(R.id.i_agree);
+        iAgreeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, AgreeToRulesActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
 
