@@ -22,8 +22,6 @@ import pdm.group.uno.xona.constants.AppConfig;
 
 
 public class MainActivity extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 CometChat.setSource("ui-kit","android","java");
                 Log.d(TAG, "Initialization completed successfully");
             }
+
             @Override
             public void onError(CometChatException e) {
                 Log.d(TAG, "Initialization failed with exception: " + e.getMessage());
