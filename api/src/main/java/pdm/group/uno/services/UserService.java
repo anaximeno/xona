@@ -8,6 +8,8 @@ import java.util.Optional;
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.core.Response;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import pdm.group.uno.entities.User;

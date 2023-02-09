@@ -1,5 +1,8 @@
 package pdm.group.uno.services;
 
+import java.net.http.*;
+
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -9,10 +12,12 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import io.quarkus.logging.Log;
 import pdm.group.uno.entities.User;
 import pdm.group.uno.entities.UserReaction;
 import pdm.group.uno.enums.Reaction;
 import pdm.group.uno.helpers.JsonLike;
+import pdm.group.uno.helpers.Match;
 
 @ApplicationScoped
 public class UserReactionService {
@@ -79,12 +84,35 @@ public class UserReactionService {
         userReaction.persist();
 
         if (userReaction.isPersistent()) {
-            // TODO: verify if there is a match between them two and call the route in the
-            // link bellow:
-            // - https://api-explorer.cometchat.com/reference/add-friend
+            if (Match.isFromReaction(userReaction)) {
+                addFriendNew(userReaction.getUserThatReacts(), userReaction.getUserThatReceivesReaction());
+            }
+
             return Response.ok().entity(JsonLike.message("Reação adicionada com sucesso!")).build();
         }
 
         return Response.status(Response.Status.BAD_REQUEST).build();
+    }
+
+    private void addFriendNew(User user, User friend) {
+        //TODO: update cometchat url
+        final String BASE_COMETCHAT_URL = "https://appId.api-region.cometchat.io/v3";
+
+        try {
+            final String body = "accepted: [\"" + friend.getId() + "\"]";
+
+            var client = HttpClient.newHttpClient();
+
+            var request = HttpRequest.newBuilder(
+                    URI.create(BASE_COMETCHAT_URL + "/users/" + user.getId() + "/friends"))
+                    .header("accept", "application/json")
+                    .header("content-type", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(body))
+                    .build();
+
+            client.send(request, null);
+        } catch (Exception e) {
+            Log.error(e);
+        }
     }
 }
