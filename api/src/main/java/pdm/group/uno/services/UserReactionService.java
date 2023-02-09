@@ -1,15 +1,16 @@
 package pdm.group.uno.services;
 
-import java.util.HashMap;
 import java.util.Optional;
 
 import javax.enterprise.context.ApplicationScoped;
+
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import pdm.group.uno.entities.User;
 import pdm.group.uno.entities.UserReaction;
 import pdm.group.uno.enums.Reaction;
+import pdm.group.uno.helpers.JsonLike;
 import pdm.group.uno.helpers.Responder;
 
 
@@ -19,7 +20,7 @@ public class UserReactionService {
         final Optional<User> user = User.findByIdOptional(id);
 
         if (user.isPresent()) {
-            final HashMap<String, Object> reactions = Responder.newResponse();
+            final JsonLike reactions = Responder.newResponse();
 
             reactions.put("received", user.get().getReactionsReceived());
             reactions.put("given", user.get().getReactionsGiven());
@@ -52,6 +53,8 @@ public class UserReactionService {
 
         userReaction.setUserThatReacts(userGives.get());
         userReaction.setUserThatReceivesReaction(userReceives.get());
+        userReaction.setReaction(reaction);
+        userReaction.persist();
 
         // TODO: verify if there is a match between them two and call the route in the link bellow:
         //  - https://api-explorer.cometchat.com/reference/add-friend

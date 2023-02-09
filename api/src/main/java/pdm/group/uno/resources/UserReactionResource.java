@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response;
 
 import pdm.group.uno.enums.Reaction;
 import pdm.group.uno.services.UserReactionService;
-
+import pdm.group.uno.helpers.JsonLike;
 
 @Path("/api/reaction")
 @ApplicationScoped
@@ -25,36 +25,45 @@ public class UserReactionResource {
     UserReactionService userReactionService;
 
     @GET
-    @Path("/{id}")
+    @Path("/user/{id}")
     public Response show(@PathParam("id") Long id) {
         return userReactionService.getUserReactions(id);
     }
 
     @POST
-    @Path("?from={userFromId}&to={userToId}&type={reactionType}")
+    @Path("/")
     @Transactional
-    public Response store(@PathParam("userFromId") Long userFromId, @PathParam("userToId") Long userToId, @PathParam("reactionType") Reaction reaction) {
-        return userReactionService.addNewReaction(userFromId, userToId, reaction);
+    public Response store(JsonLike body) {
+        Long from = ((Integer) body.get("from")).longValue();
+        Long to = ((Integer) body.get("to")).longValue();
+        Reaction reaction = (Reaction) body.get("reaction");
+        return userReactionService.addNewReaction(from, to, reaction);
     }
 
     @POST
-    @Path("/like?from={userFromId}&to={userToId}")
+    @Path("/like")
     @Transactional
-    public Response storeLike(@PathParam("userFromId") Long userFromId, @PathParam("userToId") Long userToId) {
-        return userReactionService.addNewReaction(userFromId, userToId, Reaction.Like);
+    public Response storeLike(JsonLike body) {
+        Long from = ((Integer) body.get("from")).longValue();
+        Long to = ((Integer) body.get("to")).longValue();
+        return userReactionService.addNewReaction(from, to, Reaction.Like);
     }
 
     @POST
-    @Path("/dislike?from={userFromId}&to={userToId}")
+    @Path("/dislike")
     @Transactional
-    public Response storeDislike(@PathParam("userFromId") Long userFromId, @PathParam("userToId") Long userToId) {
-        return userReactionService.addNewReaction(userFromId, userToId, Reaction.Dislike);
+    public Response storeDislike(JsonLike body) {
+        Long from = ((Integer) body.get("from")).longValue();
+        Long to = ((Integer) body.get("to")).longValue();
+        return userReactionService.addNewReaction(from, to, Reaction.Dislike);
     }
 
     @POST
-    @Path("/denounce?from={userFromId}&to={userToId}")
+    @Path("/denounce")
     @Transactional
-    public Response storeDenouce(@PathParam("userFromId") Long userFromId, @PathParam("userToId") Long userToId) {
-        return userReactionService.addNewReaction(userFromId, userToId, Reaction.Denounce);
+    public Response storeDenouce(JsonLike body) {
+        Long from = ((Integer) body.get("from")).longValue();
+        Long to = ((Integer) body.get("to")).longValue();
+        return userReactionService.addNewReaction(from, to, Reaction.Denounce);
     }
 }
