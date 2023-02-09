@@ -1,31 +1,19 @@
 package pdm.group.uno.helpers;
 
 public abstract class Responder {
-    public static JsonLike newResponse() {
+    public static JsonLike JsonLike() {
         return new JsonLike();
     }
 
     public static JsonLike message(String message) {
-        final JsonLike msg = newResponse();
-
-        msg.put("message", message);
-
-        return msg;
-    }
-
-    public static JsonLike messageWithData(String message, Object data) {
-        final JsonLike msg = message(message);
-
-        msg.put("data", data);
-
-        return msg;
+        return JsonLike().add("message", message);
     }
 
     public static JsonLike data(Object data) {
-        final JsonLike d = newResponse();
+        return JsonLike().add("data", data);
+    }
 
-        d.put("data", data);
-
-        return d;
+    public static JsonLike messageWithData(String message, Object data) {
+        return message(message).add("data", data);
     }
 }
