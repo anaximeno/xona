@@ -78,10 +78,13 @@ public class UserReactionService {
         userReaction.setReaction(reaction);
         userReaction.persist();
 
-        // TODO: verify if there is a match between them two and call the route in the
-        // link bellow:
-        // - https://api-explorer.cometchat.com/reference/add-friend
+        if (userReaction.isPersistent()) {
+            // TODO: verify if there is a match between them two and call the route in the
+            // link bellow:
+            // - https://api-explorer.cometchat.com/reference/add-friend
+            return Response.ok().entity(JsonLike.message("Reação adicionada com sucesso!")).build();
+        }
 
-        return Response.ok().entity(JsonLike.message("Reação adicionada com sucesso!")).build();
+        return Response.status(Response.Status.BAD_REQUEST).build();
     }
 }
