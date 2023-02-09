@@ -140,6 +140,14 @@ public class User extends PanacheEntity implements UpdatableEntity<User> {
         }
     }
 
+    public List<UserReaction> getReactionsReceived() {
+        return reactionsReceived;
+    }
+
+    public List<UserReaction> getReactionsGiven() {
+        return reactionsGiven;
+    }
+
     @Override
     public void update(User entity) {
         setName(entity.getName());
