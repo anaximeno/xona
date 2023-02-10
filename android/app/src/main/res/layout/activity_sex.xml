@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:textAllCaps="false"
+    tools:context=".SexActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="318dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="52dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/sex_text"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_woman"
+        android:layout_width="363dp"
+        android:layout_height="59dp"
+        android:background="@drawable/button_border"
+        android:text="@string/woman_text"
+        android:textAllCaps="false"
+        android:textColor="@color/grey"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.107" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_man"
+        android:layout_width="363dp"
+        android:layout_height="59dp"
+        android:background="@drawable/button_border"
+        android:text="@string/man_text"
+        android:textAllCaps="false"
+        android:textColor="@color/grey"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_woman"
+        app:layout_constraintVertical_bias="0.025" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_other"
+        android:layout_width="363dp"
+        android:layout_height="59dp"
+        android:background="@drawable/button_border"
+        android:text="@string/other_text"
+        android:textAllCaps="false"
+        android:textColor="@color/grey"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_man"
+        app:layout_constraintVertical_bias="0.025" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

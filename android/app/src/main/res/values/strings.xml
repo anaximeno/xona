@@ -12,4 +12,36 @@
     <string name="title_activity_agree_to_rules">AgreeToRulesActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="continue_text">Continue</string>
+
+    <!--    Orientations   -->
+    <string name="straight_text">Straight</string>
+    <string name="gay_text">Gay</string>
+    <string name="lesbian_text">Lesbian</string>
+    <string name="bisexual_text">Bisexual</string>
+    <string name="asexual_text">Asexual</string>
+    <string name="demisexual_text">Demisexual</string>
+    <string name="pansexual_text">Pansexual</string>
+    <string name="queer_textr">Queer</string>
+    <string name="questioning_text">Questioning</string>
+    <!--    Orientations   -->
+
+    <string name="orientation_text">My sexual Orientation is</string>
+    <string name="what_email_text">What\'s your email?</string>
+    <string name="first_name_text">My first name is</string>
+    <string name="first_name_description_text">This is how it will appear in Xona</string>
+    <string name="age_text">My birthday is</string>
+    <string name="age_description_text">Your age will be public</string>
+    <string name="sex_text">I am a</string>
+    <string name="relationship_text">Right now i\'m looking for...</string>
+
+    <!--    genders -->
+    <string name="woman_text">WOMAN</string>
+    <string name="man_text">MAN</string>
+    <string name="other_text">OTHER</string>
+    <!--    genders -->
+    <string name="confirm_password_text">Confirm Password</string>
+    <string name="xona_string">Xona</string>
+
+
 </resources>

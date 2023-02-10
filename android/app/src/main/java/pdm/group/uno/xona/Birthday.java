@@ -2,12 +2,19 @@ package pdm.group.uno.xona;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import java.time.LocalDate;
+import java.util.Date;
+
+import pdm.group.uno.xona.entities.User;
 
 public class Birthday extends AppCompatActivity {
     EditText editTextDate;
@@ -39,6 +46,17 @@ public class Birthday extends AppCompatActivity {
                 }else  {
                     btnContinue2.setBackgroundColor(getResources().getColor(com.cometchat.pro.uikit.R.color.grey_100));
                 }
+            }
+        });
+
+        btnContinue2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                User user = (User) getIntent().getSerializableExtra("user");
+                user.setBirthDate(editTextDate.getText().toString());
+                Intent i = new Intent(Birthday.this, SexActivity.class);
+                i.putExtra("user", user);
+                startActivity(i);
             }
         });
     }

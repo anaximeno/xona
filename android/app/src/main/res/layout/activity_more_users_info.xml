@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MoreUsersInfoActivity">
+
+    <TextView
+        android:id="@+id/tvSeperator1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/button_straight"
+        />
+
+    <TextView
+        android:id="@+id/tvSeperator2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/button_straight" />
+
+    <Button
+        android:id="@+id/button_straight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/straight_text"
+        style="?android:attr/borderlessButtonStyle"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:layout_editor_absoluteX="178dp" />
+
+    <Button
+        android:id="@+id/button_gay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/gay_text"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="593dp"
+        style="?android:attr/borderlessButtonStyle"
+        app:layout_constraintTop_toBottomOf="@+id/button_straight"/>
+
+    <TextView
+        android:id="@+id/tvSeperator3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/button_gay"
+        />
+
+    <Button
+        android:id="@+id/button_lesbian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lesbian_text"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="448dp"
+        android:layout_marginTop="10dp"
+        style="?android:attr/borderlessButtonStyle"
+        app:layout_constraintTop_toBottomOf="@+id/button_gay"/>
+
+    <TextView
+        android:id="@+id/tvSeperator4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/button_lesbian"
+        />
+
+    <Button
+        android:id="@+id/button_bisexual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bisexual_text"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_marginTop="10dp"
+        style="?android:attr/borderlessButtonStyle"
+        tools:layout_editor_absoluteY="524dp"
+        app:layout_constraintTop_toBottomOf="@+id/button_lesbian"
+        />
+    <TextView
+        android:id="@+id/tvSeperator5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/button_bisexual"
+        />
+
+    <Button
+        android:id="@+id/button_asexual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:text="@string/asexual_text"
+        tools:layout_editor_absoluteX="35dp"
+        android:layout_marginTop="10dp"
+        style="?android:attr/borderlessButtonStyle"
+        app:layout_constraintTop_toBottomOf="@+id/button_bisexual"/>
+
+    <TextView
+        android:id="@+id/tvSeperator6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/button_asexual"
+        />
+
+    <Button
+        android:id="@+id/button_demisexual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/demisexual_text"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="316dp"
+        android:layout_marginTop="10dp"
+        style="?android:attr/borderlessButtonStyle"
+        app:layout_constraintTop_toBottomOf="@+id/button_asexual"/>
+
+    <TextView
+        android:id="@+id/tvSeperator7"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/button_demisexual"
+        />
+
+    <Button
+        android:id="@+id/button_pansexual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pansexual_text"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="381dp"
+        android:layout_marginTop="10dp"
+        style="?android:attr/borderlessButtonStyle"
+        app:layout_constraintTop_toBottomOf="@+id/button_demisexual"/>
+
+    <TextView
+        android:id="@+id/tvSeperator8"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/button_pansexual"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="406dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/orientation_text"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_queer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/queer_textr"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="190dp"
+        android:layout_marginTop="10dp"
+        style="?android:attr/borderlessButtonStyle"
+        app:layout_constraintTop_toBottomOf="@+id/button_pansexual"/>
+
+    <TextView
+        android:id="@+id/tvSeperator9"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/grey"
+        app:layout_constraintTop_toBottomOf="@+id/button_queer"
+        />
+
+    <Button
+        android:id="@+id/button_questioning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:text="@string/questioning_text"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="252dp"
+        android:layout_marginTop="10dp"
+        style="?android:attr/borderlessButtonStyle"
+        app:layout_constraintTop_toBottomOf="@+id/button_queer"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

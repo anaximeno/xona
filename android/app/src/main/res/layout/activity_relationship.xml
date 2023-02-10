@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:textAllCaps="false"
+    tools:context=".RelationshipActivity">
+
+
+    <ImageButton
+        android:id="@+id/imageButtonFiguringOut"
+        android:layout_width="115dp"
+        android:layout_height="125dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/tn_grey"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonShortToLong"
+        tools:srcCompat="@drawable/still_figuring_it_out" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNewFriends"
+        android:layout_width="115dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/tn_grey"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonFiguringOut"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonFun"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonLongToShort"
+        tools:srcCompat="@drawable/new_friends" />
+
+    <ImageButton
+        android:id="@+id/imageButtonFun"
+        android:layout_width="115dp"
+        android:layout_height="125dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shortt_term_fun"
+        android:backgroundTint="@color/tn_grey"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonLong"
+        tools:srcCompat="@drawable/shortt_term_fun" />
+
+    <ImageButton
+        android:id="@+id/imageButtonShortToLong"
+        android:layout_width="115dp"
+        android:layout_height="125dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/tn_grey"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:srcCompat="@drawable/short_term_open_to_long" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="370dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/relationship_text"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageButton
+        android:id="@+id/imageButtonLong"
+        android:layout_width="115dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="20dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="@color/tn_grey"
+        android:scaleType="centerInside"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:srcCompat="@drawable/long_term_partner" />
+
+    <ImageButton
+        android:id="@+id/imageButtonLongToShort"
+        android:layout_width="115dp"
+        android:layout_height="125dp"
+        android:backgroundTint="@color/tn_grey"
+        android:scaleType="fitXY"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonShortToLong"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonLong"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:srcCompat="@drawable/long_term_open_to_short" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,20 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/tinder_vertical_gradient"
+    android:background="@color/white"
+    android:textAllCaps="false"
     tools:context=".InitialActivity">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="196dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="318dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="52dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
-        android:text="tinder"
-        android:textColor="@color/white"
-        android:textSize="60sp"
+        android:text="@string/what_email_text"
+        android:textColor="@color/black"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,10 +40,10 @@
         android:id="@+id/textEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="36dp"
         android:text="@string/email_text"
+        android:textColor="@color/black"
         android:textSize="20sp"
-        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,37 +53,64 @@
         android:id="@+id/textPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="40dp"
         android:text="@string/password_text"
+        android:textColor="@color/black"
         android:textSize="20sp"
-        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextInputEmail" />
-
-    <Button
-        android:id="@+id/button_create"
-        android:layout_width="363dp"
-        android:layout_height="59dp"
-        android:layout_marginBottom="92dp"
-        android:text="@string/create_account_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextInputPassword"
-        app:layout_constraintVertical_bias="0.191" />
 
     <EditText
         android:id="@+id/editTextInputPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textPass" />
+
+    <TextView
+        android:id="@+id/textConfirmPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/confirm_password_text"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextInputPassword" />
+
+    <EditText
+        android:id="@+id/editTextInputConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textConfirmPass" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_create"
+        android:layout_width="363dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="92dp"
+        android:background="@drawable/tinder_vertical_gradient"
+        android:textColor="@color/white"
+        android:text="@string/continue_text"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextInputConfirmPassword"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

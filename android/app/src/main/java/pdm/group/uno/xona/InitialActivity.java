@@ -38,8 +38,6 @@ public class InitialActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(InitialActivity.this, SignActivity.class);
                 startActivity(i);
-
-
             }
         });
 

@@ -15,4 +15,8 @@
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
 
+    <color name="tinder_1">#FF2784</color>
+    <color name="tinder_2">#FF7754</color>
+    <color name="tn_grey">#F2F3F5</color>
+
 </resources>
