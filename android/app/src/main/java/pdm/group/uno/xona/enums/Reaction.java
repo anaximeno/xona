@@ -1,6 +1,8 @@
 package pdm.group.uno.xona.enums;
 
-public enum Reaction {
+import java.io.Serializable;
+
+public enum Reaction implements Serializable {
     Like,
     Dislike,
     Denounce

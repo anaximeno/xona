@@ -1,6 +1,8 @@
 package pdm.group.uno.xona.enums;
 
-public enum RelationType {
+import java.io.Serializable;
+
+public enum RelationType implements Serializable {
     LongTerm,
     LongTermOpenToShort,
     ShortTermOpenToLong,

@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:allowBackup="true"
@@ -63,7 +65,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".CreateAccountActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -75,7 +77,7 @@
             <!-- android:name="android.app.lib_name" -->
             <!-- android:value="" /> -->
         </activity>
-        <activity android:name=".CreateAccountActivity" />
+        <activity android:name=".MainActivity" android:exported="true"/>
         <activity android:name=".SignActivity" />
         <activity android:name=".TinderActivity" />
         <activity android:name=".AgreeToRulesActivity" />

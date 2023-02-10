@@ -1,6 +1,8 @@
 package pdm.group.uno.xona.enums;
 
-public enum Genre {
+import java.io.Serializable;
+
+public enum Genre implements Serializable {
     Male,
     Female,
     NonBinary

@@ -2,9 +2,13 @@ package pdm.group.uno.xona;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import pdm.group.uno.xona.entities.User;
+import pdm.group.uno.xona.enums.Genre;
 
 public class SexActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -44,10 +48,20 @@ public class SexActivity extends AppCompatActivity implements View.OnClickListen
 
     private void openRelationshipActivity(String sex){
 
-//        Intent intent = new Intent(this,RelationshipActivity.class);
-//
-//        intent.putExtra("sex",sex);
-//        startActivity(intent);
+        Intent intent = new Intent(this,RelationshipActivity.class);
+        User user = (User)getIntent().getSerializableExtra("user");
+        switch (sex){
+            case "female":
+                user.setGenre(Genre.Female);
+                break;
+            case "male":
+                user.setGenre(Genre.Male);
+                break;
+            case "other":
+                user.setGenre(Genre.NonBinary);
+        }
+        intent.putExtra("user",user);
+        startActivity(intent);
 
     }
 }

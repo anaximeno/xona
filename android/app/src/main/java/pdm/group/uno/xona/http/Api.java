@@ -19,7 +19,7 @@ import retrofit2.http.Path;
 public interface Api {
     // NOTE: On a shared network, the base address should be
     // changed to the host's machine ip address.
-    String BASE_URL = "http://127.0.0.1:8080/api/";
+    String BASE_URL = "http://192.168.60.193:8080/api/";
 
     @GET("user")
     Call<List<User>> getUsers();

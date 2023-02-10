@@ -16,9 +16,14 @@ import com.cometchat.pro.core.CometChat;
 import com.cometchat.pro.exceptions.CometChatException;
 import com.cometchat.pro.models.User;
 
+import java.io.IOException;
 import java.util.regex.Pattern;
 
 import pdm.group.uno.xona.constants.AppConfig;
+import pdm.group.uno.xona.http.RetrofitClient;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
@@ -46,8 +51,24 @@ public class CreateAccountActivity extends AppCompatActivity {
                 if(passValidation()){
                 Intent i = new Intent(CreateAccountActivity.this, AgreeToRulesActivity.class);
 
-                user = new pdm.group.uno.xona.entities.User(email.getText().toString(), password.getText().toString());
-                i.putExtra("user", user);
+                user = new pdm.group.uno.xona.entities.User();
+                user.setEmail(email.getText().toString());
+                user.setPassword(password.getText().toString());
+                    Call<pdm.group.uno.xona.entities.User> cal = RetrofitClient.getInstance().getApi().createUser(user);
+                    cal.enqueue(new Callback<pdm.group.uno.xona.entities.User>() {
+                        @Override
+                        public void onResponse(Call<pdm.group.uno.xona.entities.User> call, Response<pdm.group.uno.xona.entities.User> response) {
+                            Log.d("retrofit", "success");
+                        }
+
+                        @Override
+                        public void onFailure(Call<pdm.group.uno.xona.entities.User> call, Throwable t) {
+                            Log.d("retrofit", "failure");
+
+                        }
+                    });
+
+                i.putExtra("user",  user);
 
                 i.putExtra("password",password.getText().toString());
                 i.putExtra("email",email.getText().toString());

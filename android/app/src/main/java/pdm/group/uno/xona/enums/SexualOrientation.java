@@ -1,6 +1,8 @@
 package pdm.group.uno.xona.enums;
 
-public enum SexualOrientation {
+import java.io.Serializable;
+
+public enum SexualOrientation implements Serializable {
     Straight,
     Gay,
     Lesbian,
