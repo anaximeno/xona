@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.JsonSerializer;
 
 import java.util.List;
 
+import pdm.group.uno.xona.entities.BaseReaction;
+import pdm.group.uno.xona.entities.UserReaction;
 import pdm.group.uno.xona.entities.User;
 
 import retrofit2.Call;
@@ -33,4 +35,16 @@ public interface Api {
 
     @DELETE("user/{id}")
     Call<JsonSerializer.None> deleteUser(@Path("id") Long userId);
+
+    @POST("reaction/like")
+    Call<JsonSerializer.None> addLike(@Body BaseReaction userReaction);
+
+    @POST("reaction/dislike")
+    Call<JsonSerializer.None> addDislike(@Body BaseReaction userReaction);
+
+    @POST("reaction/denounce")
+    Call<JsonSerializer.None> addDenounce(@Body BaseReaction userReaction);
+
+    @POST("reaction/")
+    Call<JsonSerializer.None> addReaction(@Body UserReaction userReaction);
 }
