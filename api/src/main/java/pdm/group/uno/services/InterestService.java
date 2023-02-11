@@ -8,7 +8,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.core.Response;
 
 import pdm.group.uno.entities.Interest;
-import pdm.group.uno.helpers.Responder;
+import pdm.group.uno.helpers.JsonLike;
 
 @ApplicationScoped
 public class InterestService {
@@ -22,7 +22,7 @@ public class InterestService {
                 .map(interest -> Response.ok(interest).build())
                 .orElse(Response
                         .status(Response.Status.NOT_FOUND)
-                        .entity(Responder.message("Interest não encontrado no sistema."))
+                        .entity(JsonLike.message("Interest não encontrado no sistema."))
                         .build());
     }
 
@@ -38,7 +38,7 @@ public class InterestService {
 
         return Response
             .status(Response.Status.BAD_REQUEST)
-            .entity(Responder.message("Interest não pode ser guardado no sistema."))
+            .entity(JsonLike.message("Interest não pode ser guardado no sistema."))
             .build();
     }
 

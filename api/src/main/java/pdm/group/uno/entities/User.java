@@ -1,13 +1,21 @@
 package pdm.group.uno.entities;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Table;
 import javax.persistence.Column;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+
 import pdm.group.uno.enums.Genre;
+import pdm.group.uno.enums.SexualOrientation;
+import pdm.group.uno.enums.RelationType;
+
 import pdm.group.uno.helpers.UpdatableEntity;
 
 @Entity
@@ -25,12 +33,22 @@ public class User extends PanacheEntity implements UpdatableEntity<User> {
     @Column(length = 255, unique = true)
     protected String email;
 
-    protected String password;
-
     protected Genre genre;
 
     @Column(length = 512)
     protected String bio;
+
+    @Column(name = "sexual_orientation")
+    protected SexualOrientation sexualOrientation;
+
+    @Column(name = "relation_type")
+    protected RelationType relationType;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "userThatReceivesReaction")
+    protected List<UserReaction> reactionsReceived;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "userThatReacts")
+    protected List<UserReaction> reactionsGiven;
 
     public Long getId() {
         return id;
@@ -102,12 +120,43 @@ public class User extends PanacheEntity implements UpdatableEntity<User> {
         }
     }
 
-    public void update(User user) {
-        setName(user.name);
-        setLastName(user.lastName);
-        setEmail(user.email);
-        setBirthDate(user.birthDate);
-        setBio(user.bio);
+    public SexualOrientation getSexualOrientation() {
+        return this.sexualOrientation;
+    }
+
+    public void setSexualOrientation(SexualOrientation sexualOrientation) {
+        if (sexualOrientation != null) {
+            this.sexualOrientation = sexualOrientation;
+        }
+    }
+
+    public RelationType getRelationType() {
+        return this.relationType;
+    }
+
+    public void setRelationType(RelationType relationType) {
+        if (relationType != null) {
+            this.relationType = relationType;
+        }
+    }
+
+    public List<UserReaction> getReactionsReceived() {
+        return reactionsReceived;
+    }
+
+    public List<UserReaction> getReactionsGiven() {
+        return reactionsGiven;
+    }
+
+    @Override
+    public void update(User entity) {
+        setName(entity.getName());
+        setLastName(entity.getLastName());
+        setEmail(entity.getEmail());
+        setBirthDate(entity.getBirthDate());
+        setBio(entity.getBio());
+        setSexualOrientation(entity.getSexualOrientation());
+        setRelationType(entity.getRelationType());
         persist();
     }
 }

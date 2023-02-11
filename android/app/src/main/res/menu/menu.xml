@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/tinder_home"
+        android:title="Explore"
+        android:icon="@drawable/baseline_fire_24"/>
+    <item android:id="@+id/tinder_message"
+        android:title="Matches"
+        android:icon="@drawable/baseline_message_24"/>
+    <item android:id="@+id/tinder_account"
+        android:title="Account"
+        android:icon="@drawable/baseline_manage_accounts_24"/>
+
+</menu>

@@ -2,11 +2,11 @@ package pdm.group.uno.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Column;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import pdm.group.uno.helpers.UpdatableEntity;
 
-import javax.persistence.Column;
+import pdm.group.uno.helpers.UpdatableEntity;
 
 @Entity
 @Table(name = "interests")
